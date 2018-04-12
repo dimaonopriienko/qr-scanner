@@ -3,10 +3,10 @@ import {
   Link,
   withRouter,
 } from 'react-router-dom';
-//import SignUpForm from './SignUpForm';
 
-import * as routes from "../constants/routes";
-import {auth} from "../firebase";
+import { auth } from '../firebase';
+
+import * as routes from '../constants/routes';
 
 const INITIAL_STATE = {
   username: '',
@@ -19,12 +19,6 @@ const INITIAL_STATE = {
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
-
-const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </div>
 
 class SignUpForm extends Component {
 
@@ -111,9 +105,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default withRouter(SignUpPage);
-
-export {
-  SignUpForm,
-  //SignUpLink,
-};
+export default SignUpForm;

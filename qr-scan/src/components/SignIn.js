@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import SignInForm from './SignInForm';
 
-class SignInPage extends Component {
-  render() {
-    return (
-      <div>
-        SignInPage
-      </div>
-    );
-  }
-}
+import {
+  withRouter,
+} from 'react-router-dom';
 
-export default SignInPage;
+
+const SignInPage = ({ history }) =>
+  <div>
+    <h1>SignIn</h1>
+    <SignInForm history={history} />
+  </div>
+
+
+export default withRouter(SignInPage);

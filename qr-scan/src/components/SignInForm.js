@@ -37,7 +37,7 @@ class SignInForm extends Component {
 
     firebase.auth().signInWithEmailAndPassword(email, password).then( () => {
       this.setState(() => ({ ...INITIAL_STATE }));
-      history.push(routes.HOME);
+      history.push(routes.QReader);
     }).catch(error => {
         this.setState(byPropKey('error', error));
       });

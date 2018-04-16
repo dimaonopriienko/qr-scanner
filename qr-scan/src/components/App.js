@@ -6,17 +6,34 @@ import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
-import HomePage from './Home';
+import QReader from './QReader';
 import AccountPage from './Account'
 
 import * as routes from '../constants/routes';
+import { firebase } from '../firebase';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState(() => ({ authUser }))
+        : this.setState(() => ({ authUser: null }));
+    });
+  }
+
   render() {
     return (
       <Router>
         <div>
-          <Navigation />
+          <Navigation authUser={this.state.authUser}/>
 
           <hr/>
 
@@ -37,8 +54,8 @@ class App extends Component {
             component={() => <PasswordForgetPage />}
           />
           <Route
-            exact path={routes.HOME}
-            component={() => <HomePage />}
+            exact path={routes.QReader}
+            component={() => <QReader />}
           />
           <Route
             exact path={routes.ACCOUNT}

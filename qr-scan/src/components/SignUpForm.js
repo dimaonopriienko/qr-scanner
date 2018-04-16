@@ -40,7 +40,7 @@ class SignUpForm extends Component {
 
     firebase.auth().createUserWithEmailAndPassword(email, passwordOne).then(authUser => {
       this.setState(() => ({ ...INITIAL_STATE }));
-      history.push(routes.HOME);
+      history.push(routes.QReader);
     })
       .catch(error => {
         this.setState(byPropKey('error', error));

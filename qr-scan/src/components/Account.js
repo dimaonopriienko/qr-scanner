@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import AuthUserContext from './AuthUserContext';
 import PasswordForgetPage from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
+import withAuthorization from './withAuthorization';
 
 class AccountPage extends Component {
   render() {
@@ -26,4 +27,6 @@ class AccountPage extends Component {
   }
 }
 
-export default AccountPage;
+const authCondition = (authUser) => !!authUser;
+
+export default withAuthorization(authCondition)(AccountPage);

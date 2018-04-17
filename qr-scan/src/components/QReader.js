@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QrReader from 'react-qr-reader';
+import withAuthorization from './withAuthorization';
 
 class QReader extends Component {
   constructor(props){
@@ -38,4 +39,6 @@ class QReader extends Component {
   }
 }
 
-export default QReader;
+const authCondition = (authUser) => !!authUser;
+
+export default withAuthorization(authCondition)(QReader);

@@ -17,7 +17,7 @@ const byPropKey = (propertyName, value) => () => ({
 
 class SignUpForm extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       ...INITIAL_STATE

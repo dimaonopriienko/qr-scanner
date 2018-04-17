@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import PasswordForgetForm from './PasswordForgetForm';
 
-class PasswordForgetPage extends Component {
-  render() {
-    return (
-      <div>
-        PasswordForgetPage
-      </div>
-    );
-  }
-}
+import {
+  withRouter,
+} from 'react-router-dom';
 
-export default PasswordForgetPage;
+
+const PasswordForgetPage = ({ history }) =>
+  <div>
+    <h2>Forget Password</h2>
+    <PasswordForgetForm history={history} />
+  </div>
+
+
+export default withRouter(PasswordForgetPage);

@@ -65,7 +65,7 @@ body {
     min-height: 100vh;
     padding-top: 80px;
 }
-h1 {
+h1,h2,h3,h4,h5,h6 {
     text-align: center;
     margin: 0;
 }
@@ -118,13 +118,22 @@ form button {
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
-
-
-
 }
 form button:hover {
     background-color: rgb(245, 247, 249);
 }
 .scan-result {
+    text-align: center;
+}
+.forget-link {
+    font-size: 14px;
+    text-align: center;
+}
+.forget-link a{
+    color: #fff;
+}
+.account-info {
+    display: block;
+    padding: 0 15px;
     text-align: center;
 }
